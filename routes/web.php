@@ -32,6 +32,7 @@ Route::prefix('admin')->group(function () {
 
     // Add route for admin view
     Route::get('/', 'AdminController@index')->name('admin.dashboard');
+    Route::get('/logout', 'Auth\Admin\AdminLoginController@logout')->name('admin.logout');
 });
 
 

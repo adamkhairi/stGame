@@ -46,8 +46,20 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
-    ],
 
+        //Added For Admins
+
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
+
+        'admin-api' => [
+            'driver' => 'token',
+            'provider' => 'admins',
+            'hash' => false,
+        ],
+    ],
     /*
     |--------------------------------------------------------------------------
     | User Providers
@@ -70,6 +82,8 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
+
+        //Added For Admins
 
         'admins' => [
             'driver' => 'eloquent',
@@ -100,6 +114,13 @@ return [
         'users' => [
             'provider' => 'users',
             'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+//Added For Admins
+        'admins' => [
+            'provider' => 'admins',
+            'table' => 'password_resets', // Same table of password reset for users and admins
             'expire' => 60,
             'throttle' => 60,
         ],

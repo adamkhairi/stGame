@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,4 +20,20 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//Group admin Routes
+
+Route::prefix('admin')->group(function () {
+
+
+    // Add route for admin login controller
+    Route::get('/login', 'Auth\Admin\AdminLoginController@showLoginForm')->name('admin.login');
+    Route::post('/login', 'Auth\Admin\AdminLoginController@login')->name('admin.login.submit');
+
+    // Add route for admin view
+    Route::get('/', 'AdminController@index')->name('admin.dashboard');
+});
+
+
+
 

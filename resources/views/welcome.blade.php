@@ -10,6 +10,12 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/navbar.js') }}" defer></script>
+    <script src="{{ asset('js/main.js') }}" defer></script>
+
+    <script src="https://kit.fontawesome.com/8ac7442e81.js" crossorigin="anonymous"></script>
+
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     <link href="{{ mix('css/main.css') }}" rel="stylesheet">
@@ -17,7 +23,7 @@
 <body class="h-screen antialiased leading-none">
 <div class="flex flex-col">
 
-    @include('layouts.navbar')
+    @include('layouts.includes.navBar')
 
     <section
         class="flex md:flex-row justify-around items-center p-6 text-center flex-col-reverse container h-screen mx-auto">

@@ -14,7 +14,10 @@ require('laravel-mix-tailwind');
  */
 
 mix.js('resources/js/app.js', 'public/js')
+mix.js('resources/js/main.js','public/js')
+mix.js('resources/js/navbar.js','public/js')
    .postCss('resources/css/app.css', 'public/css')
+   .postCss('resources/css/main.css', 'public/css')
    .tailwind('./tailwind.config.js');
 
 if (mix.inProduction()) {

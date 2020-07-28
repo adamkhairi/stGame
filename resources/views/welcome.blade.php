@@ -12,57 +12,39 @@
 
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <link href="{{ mix('css/main.css') }}" rel="stylesheet">
 </head>
-<body class="bg-gray-100 h-screen antialiased leading-none">
+<body class="h-screen antialiased leading-none">
 <div class="flex flex-col">
-    @if(Route::has('login'))
-        <div class="absolute top-0 right-0 mt-4 mr-4">
-            @auth
-                <a href="{{ url('/home') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('Home') }}</a>
-            @else
-                <a href="{{ route('login') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase pr-6">{{ __('Login') }}</a>
-                @if (Route::has('register'))
-                    <a href="{{ route('register') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('Register') }}</a>
-                @endif
-            @endauth
-        </div>
-    @endif
 
-    <div class="min-h-screen flex items-center justify-center">
-        <div class="flex flex-col justify-around h-full">
-            <div>
-                <h1 class="text-gray-600 text-center font-light tracking-wider text-5xl mb-6">
-                    {{ config('app.name', 'Laravel') }}
-                </h1>
-                <ul class="list-reset">
-                    <li class="inline pr-8">
-                        <a href="https://laravel.com/docs" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="Documentation">Documentation</a>
-                    </li>
-                    <li class="inline pr-8">
-                        <a href="https://laracasts.com" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="Laracasts">Laracasts</a>
-                    </li>
-                    <li class="inline pr-8">
-                        <a href="https://laravel-news.com" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="News">News</a>
-                    </li>
-                    <li class="inline pr-8">
-                        <a href="https://nova.laravel.com" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="Nova">Nova</a>
-                    </li>
-                    <li class="inline pr-8">
-                        <a href="https://forge.laravel.com" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="Forge">Forge</a>
-                    </li>
-                    <li class="inline pr-8">
-                        <a href="https://vapor.laravel.com" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="Vapor">Vapor</a>
-                    </li>
-                    <li class="inline pr-8">
-                        <a href="https://github.com/laravel/laravel" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="GitHub">GitHub</a>
-                    </li>
-                    <li class="inline pr-8">
-                        <a href="https://tailwindcss.com" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="Tailwind Css">Tailwind CSS</a>
-                    </li>
-                </ul>
+    @include('layouts.navbar')
+
+    <section
+        class="flex md:flex-row justify-around items-center p-6 text-center flex-col-reverse container h-screen mx-auto">
+        <div class="flex flex-col items-center">
+            <div class="my-4">
+                <h1 class="text-4xl font-bold mb-6 font-title">Commencer</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, quis.</p>
             </div>
+            <div class="my-4">
+                @if (Route::has('login'))
+                    <a href="{{ route('login') }}" id="loginBtnHero" class="btn-gardiant px-4 py-1 m-2 rounded">Se
+                        connecter</a>
+
+
+                @endif
+                @if (Route::has('register'))
+                    <a href="{{ route('register') }}" id="registerBtn" class="btn-gardiant px-4 py-1 m-2 rounded">Inscrivez-vous</a>
+
+                @endif
+            </div>
+
         </div>
-    </div>
+        <div>
+            <img src="/img/banner_img.png" alt="">
+        </div>
+
+    </section>
 </div>
 </body>
 </html>

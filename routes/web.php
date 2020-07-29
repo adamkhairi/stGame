@@ -16,10 +16,25 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('/');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('/activity', function (){
+    return view('layouts.content.activity');
+})->name('activity');
+
+Route::get('/articles', function (){
+    return view('layouts.content.articles');
+})->name('articles');
+
+Route::get('/contact', function (){
+    return view('layouts.content.contact');
+})->name('contact');
+
+
 
 //Group admin Routes
 

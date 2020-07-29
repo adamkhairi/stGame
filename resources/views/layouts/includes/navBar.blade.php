@@ -6,17 +6,17 @@
     </div>
     <div class="flex  justify-center hidden lg:flex w-6/12">
         <div class="mx-3 hover:bg-gray-200 hover:text-gray-900 hover:shadow-lg hover:font-bold px-6 py-1 rounded">
-            <a href="#">Acceuil</a>
+            <a href="{{ route('/') }}">Acceuil</a>
         </div>
         <div class="mx-3 hover:bg-gray-200 hover:text-gray-900 hover:shadow-lg hover:font-bold px-6 py-1 rounded">
 
-            <a href="#">Activités</a>
+            <a href="{{ route('activity') }}">Activités</a>
         </div>
         <div class="mx-3 hover:bg-gray-200 hover:text-gray-900 hover:shadow-lg hover:font-bold px-6 py-1 rounded">
-            <a href="#">Articles</a>
+            <a href="{{ route('articles') }}">Articles</a>
         </div>
         <div class="mx-3 hover:bg-gray-200 hover:text-gray-900 hover:shadow-lg hover:font-bold px-6 py-1 rounded">
-            <a href="">Contact</a>
+            <a href="{{ route('contact') }}">Contact</a>
         </div>
     </div>
 
@@ -60,7 +60,7 @@
     </div>
 
     {{--                    <div class="flex-1 text-right">--}}
-    <div class="flex items-center justify-between  hidden lg:flex w-3/12">
+    <div class="flex items-center justify-around  hidden lg:flex w-3/12">
 
         @guest
             <a href="{{ route('login') }}" id="loginBtnHero" class="btn-gardiant whitespace-no-wrap px-4 py-1 m-2 rounded">Se

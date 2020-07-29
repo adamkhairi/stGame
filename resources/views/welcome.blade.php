@@ -8,8 +8,9 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name') }}</title>
 
+    <script src="{{ asset('js/jquery.min.js') }}" defer></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/navbar.js') }}" defer></script>
     <script src="{{ asset('js/main.js') }}" defer></script>
@@ -25,8 +26,11 @@
 
     @include('layouts.includes.navBar')
 
+
     <section
         class="flex md:flex-row justify-around items-center p-6 text-center flex-col-reverse container h-screen mx-auto">
+
+
         <div class="flex flex-col items-center">
             <div class="my-4">
                 <h1 class="text-4xl font-bold mb-6 font-title">Commencer</h1>
@@ -52,5 +56,7 @@
 
     </section>
 </div>
+@include('layouts.includes.footer')
+
 </body>
 </html>

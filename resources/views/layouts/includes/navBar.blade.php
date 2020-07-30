@@ -63,16 +63,31 @@
     <div class="flex items-center justify-around  hidden lg:flex w-3/12">
 
         @guest
-            <a href="{{ route('login') }}" id="loginBtnHero" class="btn-gardiant whitespace-no-wrap px-4 py-1 m-2 rounded">Se
+            <a href="{{ route('login') }}" id="loginBtnHero"
+               class="btn-gardiant whitespace-no-wrap px-4 py-1 m-2 rounded">Se
                 connecter</a>
             @if (Route::has('register'))
-                <a href="{{ route('register') }}" id="registerBtn" class="btn-gardiant whitespace-no-wrap px-4 py-1 m-2 rounded">Inscrivez-vous</a>
+                <a href="{{ route('register') }}" id="registerBtn"
+                   class="btn-gardiant whitespace-no-wrap px-4 py-1 m-2 rounded">Inscrivez-vous</a>
 
             @endif
         @else
-            <span class="text-gray-300 text-sm pr-4">{{ Auth::user()->name }}</span>
+            <a class="" href="{{ Route('user.profile') }}">
+                <div class="flex flex-row justify-center items-center">
+                    <div>
 
-            <a href="" class="m-1 flex-shrink-0"><img src="/img/stream.svg" class="rounded-lg" alt=""></a>
+                        <i class="fas fa-user-circle text-5xl"></i>
+                    </div>
+
+{{--                    <div>--}}
+
+{{--                        <span class="text-gray-300 text-sm pr-4">{{ Auth::user()->name }}</span>--}}
+{{--                    </div>--}}
+                </div>
+
+            </a>
+
+            <a href="##" class="m-1 flex-shrink-0"><img src="/img/stream.svg" class="rounded-lg" alt=""></a>
 
             <a href="{{ route('logout') }}"
                class="no-underline hover:underline text-gray-300 text-sm p-3"

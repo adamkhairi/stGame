@@ -1,8 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="flex justify-center items-center h-screen">
-        <div class="flex flex-wrap justify-center items-center">
+    <div class="p-6">
+
+    </div>
+@endsection
+@section('section1')
+    <div class="m-2 p-4 text-center">
+        <h1 class="text-4xl font-title">Inscrivez-vous </h1>
+    </div>
+    <div class="flex justify-center items-center">
+        <div class="flex flex-wrap justify-center items-center py-24">
             <div class="w-full max-w-sm">
                 <div class="flex flex-col break-words bg-white border border-2 rounded shadow-md">
 
@@ -27,31 +35,111 @@
                             @enderror
                         </div>
 
+                        {{--NAME--}}
+                        <div class="flex flex-row mb-6">
+                            <div class="flex flex-wrap mb-6">
+                                <label for="fName" class="block text-gray-700 text-sm font-bold mb-2">
+                                    {{ __('First Name') }}:
+                                </label>
+
+                                <input id="fName" type="text"
+                                       class="form-input w-full @error('fName')  border-red-500 @enderror" name="fName"
+                                       value="{{ old('fName') }}" required autocomplete="fName" autofocus>
+
+                                @error('fName')
+                                <p class="text-red-500 text-xs italic mt-4">
+                                    {{ $message }}
+                                </p>
+                                @enderror
+                            </div>
+
+                            <div class="flex flex-wrap mb-6 ml-4">
+                                <label for="lName" class="block text-gray-700 text-sm font-bold mb-2">
+                                    {{ __('Last Name') }}:
+                                </label>
+
+                                <input id="lName" type="text"
+                                       class="form-input w-full @error('lName')  border-red-500 @enderror" name="lName"
+                                       value="{{ old('lName') }}" required autocomplete="lName" autofocus>
+
+                                @error('lName')
+                                <p class="text-red-500 text-xs italic mt-4">
+                                    {{ $message }}
+                                </p>
+                                @enderror
+                            </div>
+
+                        </div>
+
+
+                        {{--address--}}
+                        <div class="flex flex-wrap mb-6">
+                            <label for="address" class="block text-gray-700 text-sm font-bold mb-2">
+                                {{ __('Adresse') }}:
+                            </label>
+
+
+                            <textarea name="address" id="address" class="form-input w-full @error('address')  border-red-500 @enderror" required autocomplete="address" autofocus cols="30" rows="10">{{ old('address') }}</textarea>
+
+
+                            @error('address')
+                            <p class="text-red-500 text-xs italic mt-4">
+                                {{ $message }}
+                            </p>
+                            @enderror
+                        </div>
+
+
+                        {{--Birthday--}}
+                        <div class="flex flex-wrap mb-6">
+                            <label for="birthday" class="block text-gray-700 text-sm font-bold mb-2">
+                                {{ __('BirthDay') }}:
+                            </label>
+
+                            <input id="birthday" type="date"
+                                   class="form-input w-full @error('birthday')  border-red-500 @enderror" name="birthday"
+                                   value="{{ old('birthday') }}" required autocomplete="birthday" autofocus>
+
+                            @error('birthday')
+                            <p class="text-red-500 text-xs italic mt-4">
+                                {{ $message }}
+                            </p>
+                            @enderror
+                        </div>
+
+
+                        {{--                        EMAIL--}}
                         <div class="flex flex-wrap mb-6">
                             <label for="email" class="block text-gray-700 text-sm font-bold mb-2">
                                 {{ __('E-Mail Address') }}:
                             </label>
 
-                            <input id="email" type="email" class="form-input w-full @error('email') border-red-500 @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                            <input id="email" type="email"
+                                   class="form-input w-full @error('email') border-red-500 @enderror" name="email"
+                                   value="{{ old('email') }}" required autocomplete="email">
 
                             @error('email')
-                                <p class="text-red-500 text-xs italic mt-4">
-                                    {{ $message }}
-                                </p>
+                            <p class="text-red-500 text-xs italic mt-4">
+                                {{ $message }}
+                            </p>
                             @enderror
                         </div>
+
+                        {{--                        PASSWORD--}}
 
                         <div class="flex flex-wrap mb-6">
                             <label for="password" class="block text-gray-700 text-sm font-bold mb-2">
                                 {{ __('Password') }}:
                             </label>
 
-                            <input id="password" type="password" class="form-input w-full @error('password') border-red-500 @enderror" name="password" required autocomplete="new-password">
+                            <input id="password" type="password"
+                                   class="form-input w-full @error('password') border-red-500 @enderror" name="password"
+                                   required autocomplete="new-password">
 
                             @error('password')
-                                <p class="text-red-500 text-xs italic mt-4">
-                                    {{ $message }}
-                                </p>
+                            <p class="text-red-500 text-xs italic mt-4">
+                                {{ $message }}
+                            </p>
                             @enderror
                         </div>
 
@@ -60,11 +148,13 @@
                                 {{ __('Confirm Password') }}:
                             </label>
 
-                            <input id="password-confirm" type="password" class="form-input w-full" name="password_confirmation" required autocomplete="new-password">
+                            <input id="password-confirm" type="password" class="form-input w-full"
+                                   name="password_confirmation" required autocomplete="new-password">
                         </div>
 
                         <div class="flex flex-wrap">
-                            <button type="submit" class="inline-block align-middle text-center select-none border font-bold whitespace-no-wrap py-2 px-4 rounded text-base leading-normal no-underline text-gray-100 bg-blue-500 hover:bg-blue-700">
+                            <button type="submit"
+                                    class="inline-block align-middle text-center select-none border font-bold whitespace-no-wrap py-2 px-4 rounded text-base leading-normal no-underline text-gray-100 bg-blue-500 hover:bg-blue-700">
                                 {{ __('Register') }}
                             </button>
 

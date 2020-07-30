@@ -25,16 +25,19 @@
     <link rel="stylesheet" href="carousel/owl.theme.default.min.css">
 </head>
 <body class="">
-<div id="app">
-    @include('layouts.includes.navBar')
+@include('layouts.includes.navBar')
+{{--<div id="app">--}}
 
-    <main>
 
-        @yield('content')
 
-    </main>
+    @yield('content')
+    @yield('section1')
+    @yield('section2')
+    @yield('section3')
 
-</div>
-    @include('layouts.includes.footer')
+
+
+{{--</div>--}}
+@include('layouts.includes.footer')
 </body>
 </html>

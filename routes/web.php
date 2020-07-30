@@ -48,6 +48,15 @@ Route::prefix('admin')->group(function () {
     // Add route for admin view
     Route::get('/', 'AdminController@index')->name('admin.dashboard');
     Route::get('/logout', 'Auth\Admin\AdminLoginController@logout')->name('admin.logout');
+    Route::get('/profile',function (){
+        view('layouts.admin.profile');
+    })->name('admin.profile');
+});
+
+Route::prefix('user')->group(function (){
+    Route::get('/profile',function (){
+       return view('layouts.user.profile') ;
+    })->name('user.profile');
 });
 
 

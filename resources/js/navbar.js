@@ -7,5 +7,22 @@ menuToggle.addEventListener('click', event => {
 let closeMenu = document.getElementById('closeMenu');
 closeMenu.addEventListener('click', event => {
 	menu.classList.toggle('hidden');
-	
+
+});
+
+// Nav
+$(function () {
+    let navbar = $('#nav');
+
+    $(window).scroll(function () {
+        if ($(window).scrollTop() <= 50) {
+            navbar.removeClass('bg-gray-900');
+            navbar.removeClass('shadow-md');
+
+        } else {
+            navbar.addClass('bg-gray-900');
+            navbar.addClass('shadow-md');
+
+        }
+    });
 });

@@ -1,4 +1,4 @@
-<nav id="nav" class="flex justify-between fixed z-20  items-center text-white w-full p-4 px-20 ">
+<nav id="nav" class="flex justify-between fixed z-20  items-center text-white w-full p-4  px-6 md:px-20 ">
     <div class="flex w-3/12 justify-start">
         <a href="#" class="flex-shrink-0">
             <img src="/img/favicon.png" alt="LOGO">
@@ -21,7 +21,7 @@
     </div>
 
     <div class="">
-        <div id="menu-toggle" class="block lg:hidden shadow">
+        <div id="menu-toggle" class="block lg:hidden">
             <i class="fas fa-bars text-4xl hover:text-gray-600"></i>
         </div>
         <div id="menu" class="hidden absolute rounded-lg bg-gray-300 shadow w-64 m-2 right-0">
@@ -60,15 +60,15 @@
     </div>
 
     {{--                    <div class="flex-1 text-right">--}}
-    <div class="flex items-center justify-around  hidden lg:flex w-3/12">
+    <div class="flex items-center justify-around text-sm hidden lg:flex w-3/12">
 
         @guest
             <a href="{{ route('login') }}" id="loginBtnHero"
-               class="btn-gardiant whitespace-no-wrap px-4 py-1 m-2 rounded">Se
+               class="btn-gardiant whitespace-no-wrap px-4 py-2 m-2 rounded shadow-lg">Se
                 connecter</a>
             @if (Route::has('register'))
                 <a href="{{ route('register') }}" id="registerBtn"
-                   class="btn-gardiant whitespace-no-wrap px-4 py-1 m-2 rounded">Inscrivez-vous</a>
+                   class="btn-gardiant whitespace-no-wrap px-4 py-2 m-2 rounded shadow-lg">Inscrivez-vous</a>
 
             @endif
         @else

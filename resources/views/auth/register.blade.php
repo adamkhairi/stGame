@@ -10,7 +10,7 @@
         <h1 class="text-4xl font-title">Inscrivez-vous </h1>
     </div>
     <div class="flex justify-center items-center">
-        <div class="flex flex-wrap justify-center items-center py-24">
+        <div class="flex flex-wrap justify-center items-center px-8 py-24">
             <div class="w-full max-w-sm">
                 <div class="flex flex-col break-words bg-white border border-2 rounded shadow-md">
 

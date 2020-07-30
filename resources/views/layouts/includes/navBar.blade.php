@@ -1,10 +1,10 @@
-<nav id="nav" class="flex justify-between fixed z-20  items-center text-white w-full p-4  px-6 md:px-20 ">
-    <div class="flex w-3/12 justify-start">
-        <a href="#" class="flex-shrink-0">
+<nav id="nav" class="flex justify-between fixed z-20  items-center text-white w-full p-4  px-6 md:px-16 ">
+    <div class="flex w-2/12 justify-start">
+        <a href="#" class="flex-shrink-0 mx-4">
             <img src="/img/favicon.png" alt="LOGO">
         </a>
     </div>
-    <div class="flex  justify-center hidden lg:flex w-6/12">
+    <div class="flex  justify-center hidden lg:flex w-8/12">
         <div class="mx-3 hover:bg-gray-200 hover:text-gray-900 hover:shadow-lg hover:font-bold px-6 py-1 rounded">
             <a href="{{ route('/') }}">Acceuil</a>
         </div>
@@ -60,7 +60,7 @@
     </div>
 
     {{--                    <div class="flex-1 text-right">--}}
-    <div class="flex items-center justify-around text-sm hidden lg:flex w-3/12">
+    <div class="flex items-center justify-around text-sm hidden lg:flex w-2/12">
 
         @guest
             <a href="{{ route('login') }}" id="loginBtnHero"

@@ -44,7 +44,7 @@
 
                                 <input id="fName" type="text"
                                        class="form-input w-full @error('fName')  border-red-500 @enderror" name="fName"
-                                       value="{{ old('fName') }}" required autocomplete="fName" autofocus>
+                                       value="{{ old('fName') }}" autocomplete="fName" autofocus>
 
                                 @error('fName')
                                 <p class="text-red-500 text-xs italic mt-4">
@@ -60,7 +60,7 @@
 
                                 <input id="lName" type="text"
                                        class="form-input w-full @error('lName')  border-red-500 @enderror" name="lName"
-                                       value="{{ old('lName') }}" required autocomplete="lName" autofocus>
+                                       value="{{ old('lName') }}" autocomplete="lName" autofocus>
 
                                 @error('lName')
                                 <p class="text-red-500 text-xs italic mt-4">

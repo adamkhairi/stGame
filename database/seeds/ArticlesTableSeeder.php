@@ -3,31 +3,23 @@
 use App\Article;
 use Faker\Factory;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
 
-class DatabaseSeeder extends Seeder
+class ArticlesTableSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
+     * Run the database seeds.
      *
      * @return void
      */
     public function run()
     {
-//        DB::table('admins')->insert([
-//            'name' => 'ADMIN_1',
-//            'email' => 'john@example.com',
-//            'password' => Hash::make('12345678'),
-//            ]
-//        );
-        // $this->call(UserSeeder::class);
+        // Let's truncate our existing records to start from scratch.
         Article::truncate();
 
         $faker = Factory::create();
 
         // And now, let's create a few articles in our database:
-        for ($i = 0; $i < 20; $i++) {
+        for ($i = 0; $i < 10; $i++) {
             Article::create([
                 'title' => $faker->sentence,
                 'img' => $faker->imageUrl(),

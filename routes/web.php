@@ -26,9 +26,9 @@ Route::get('/activity', function (){
     return view('layouts.content.activity');
 })->name('activity');
 
-Route::get('/articles', function (){
-    return view('layouts.content.articles');
-})->name('articles');
+//Route::get('/articles', function (){
+//    return view('layouts.content.articles');
+//})->name('articles');
 
 Route::get('/contact', function (){
     return view('layouts.content.contact');
@@ -61,4 +61,12 @@ Route::prefix('user')->group(function (){
 
 
 
+Route::resource('articles','ArticleController');
+//Route::get('articles','ArticleController@index')->name('articles');
 
+
+//Route::get('articles', 'ArticleController@index');
+//Route::get('articles/{article}', 'ArticleController@show');
+//Route::post('articles', 'ArticleController@store');
+//Route::put('articles/{article}', 'ArticleController@update');
+//Route::delete('articles/{article}', 'ArticleController@delete');

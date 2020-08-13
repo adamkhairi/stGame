@@ -14,7 +14,7 @@
             <div class="flex flex-col md:w-2/2 w-100 px-6 h-full overflow-hidden  ">
                 <div class="pb-4 col-span-8 ">
                     <div class="max-w-xl rounded overflow-hidden shadow-lg bg-white">
-                        <img class="w-full" src="img/article1.png" alt="Sunset in the mountains">
+                        <img class="w-full" src="/img/article1.png" alt="Sunset in the mountains">
                         <div class="px-6 py-4">
 
                             <div class="relative">
@@ -31,7 +31,7 @@
 
                     <div class="py-4"><span class="bg-yellow-200"> </span></div>
                     <div class="max-w-xl rounded overflow-hidden shadow-lg bg-white ">
-                        <img class="w-full " src="img/article1.png" alt="Sunset in the mountains">
+                        <img class="w-full " src="/img/article1.png" alt="Sunset in the mountains">
                         <div class="px-6 py-4">
                             <div class="relative">
                                 <h1 class="font-title text-2xl mb-2 text-black">uncomming fighter</h1>
@@ -46,7 +46,7 @@
                     </div>
                     <div class="py-4"><span class="bg-yellow-200"> </span></div>
                     <div class="max-w-xl rounded overflow-hidden shadow-lg bg-white">
-                        <img class="w-full" src="img/article1.png" alt="Sunset in the mountains">
+                        <img class="w-full" src="/img/article1.png" alt="Sunset in the mountains">
                         <div class="px-6 py-4">
                             <div class="relative">
                                 <h1 class="font-title text-2xl mb-2 text-black">uncomming fighter</h1>
@@ -61,7 +61,7 @@
                     </div>
                     <div class="py-4"><span class="bg-yellow-200"> </span></div>
                     <div class="max-w-xl rounded overflow-hidden shadow-lg bg-white">
-                        <img class="w-full" src="img/article1.png" alt="Sunset in the mountains">
+                        <img class="w-full" src="/img/article1.png" alt="Sunset in the mountains">
                         <div class="px-6 py-4">
                             <div class="relative">
                                 <h1 class="font-title text-2xl mb-2 text-black">uncomming fighter</h1>
@@ -86,7 +86,7 @@
                             class="shadow-none appearance-none border rounded-full w-full p-4 mb-2 text-gray-700"
                             id="text" type="text" placeholder="Rechercher">
                         <a href="#" class="absolute rounded-full right-0 top-0 m-2">
-                            <img class="" src="img/recherche.svg" alt="">
+                            <img class="" src="/img/recherche.svg" alt="">
                         </a>
                     </div>
                 </div>
@@ -100,7 +100,7 @@
                             class="inline-grid max-w-xs sm:max-w-xs lg:max-w-lg lg:flex bg-black rounded-lg border shadow-lg pb-6 lg:pb-0">
                             <div class="w-full lg:w-2/4 lg:p-4">
                                 <!-- <img src="img/profile.jpg" alt="profile picture" class="rounded-lg"> -->
-                                <img src="img/article1.png" alt="image"
+                                <img src="/img/article1.png" alt="image"
                                      class="h-64 lg:h-full object-cover object-center w-full">
                             </div>
 
@@ -122,7 +122,7 @@
                             class="inline-grid max-w-xs sm:max-w-xs lg:max-w-lg lg:flex bg-black rounded-lg border shadow-lg pb-6 lg:pb-0">
                             <div class="w-full lg:w-2/4 lg:p-4">
                                 <!-- <img src="img/profile.jpg" alt="profile picture" class="rounded-lg"> -->
-                                <img src="img/article1.png" alt="image"
+                                <img src="/img/article1.png" alt="image"
                                      class="h-64 lg:h-full object-cover object-center w-full">
                             </div>
 
@@ -144,7 +144,7 @@
                             class="inline-grid max-w-xs sm:max-w-xs lg:max-w-lg lg:flex bg-black rounded-lg border shadow-lg pb-6 lg:pb-0">
                             <div class="w-full lg:w-2/4 lg:p-4">
                                 <!-- <img src="img/profile.jpg" alt="profile picture" class="rounded-lg"> -->
-                                <img src="img/article1.png" alt="image"
+                                <img src="/img/article1.png" alt="image"
                                      class="h-64 lg:h-full object-cover object-center w-full">
                             </div>
 
@@ -166,7 +166,7 @@
                             class="inline-grid max-w-xs sm:max-w-xs lg:max-w-lg lg:flex bg-black rounded-lg border shadow-lg pb-6 lg:pb-0">
                             <div class="w-full lg:w-2/4 lg:p-4">
                                 <!-- <img src="img/profile.jpg" alt="profile picture" class="rounded-lg"> -->
-                                <img src="img/article1.png" alt="image"
+                                <img src="/img/article1.png" alt="image"
                                      class="h-64 lg:h-full object-cover object-center w-full">
                             </div>
 
@@ -233,4 +233,51 @@
         </a>
     </nav>
 
+    <div>
+        <div class="pt-12">
+            <form action="{{route('articles.store')}}" method="post">
+                @csrf
+                <div class="flex flex-col justify-around items-center p-6 text-black">
+{{--                    <div class="">--}}
+                        <input type="text" class="form-input" name="title" placeholder="Title...">
+                        <input type="file" class="form-input" name="img" placeholder="Image">
+                        <textarea type="text" class="form-input" name="body" rows="3"  placeholder="Body..."></textarea>
+
+                        <select name="active" id="" title="Visibility">
+                            <option value="0">On</option>
+                            <option value="1">Off</option>
+                        </select>
+
+                        <input type="number" class="form-input" name="votes" placeholder="Title...">
+{{--                    </div>--}}
+                    <div class="pt-4">
+                        <button class="px-6 py-1 btn-gardiant text-white font-bold hover:underline">Add</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div
+            class="inline-grid max-w-xs sm:max-w-xs lg:max-w-lg lg:flex bg-black rounded-lg border shadow-lg pb-6 lg:pb-0">
+            <div class="w-full lg:w-2/4 lg:p-4">
+                <!-- <img src="img/profile.jpg" alt="profile picture" class="rounded-lg"> -->
+                <img src=" " alt="image"
+                     class="h-64 lg:h-full object-cover object-center w-full">
+            </div>
+
+            <div class="w-full lg:w-2/3 p-4">
+                <div class="inline-grid">
+                    <p class="work-sans font-semibold text-xl text-white text-center">Title</p>
+                    <p class="raleway text-sm my-4 text-white opacity-75">Lorem ipsum dolor sit amet
+                        consectetur
+                        adipisicing elit. Exercitationem fuga odit repellendus vero iure alias accusamus
+                        ex sed
+                        facilis magni aperiam dicta obcaecati, possimus rerum, consequuntur deserunt aut
+                        dolor
+                        ipsa.</p>
+                    <a class="text-center btn-gardiant rounded px-3 py-1" href="#">voir plus...</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
 @endsection
